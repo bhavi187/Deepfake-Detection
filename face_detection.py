@@ -5,11 +5,11 @@ from mtcnn import MTCNN
 detector = MTCNN()
 
 def detect_faces(frame):
-    """Detects faces in the frame using MTCNN and returns the cropped face image."""
+    
     faces = detector.detect_faces(frame)
 
     if faces:
-        x, y, width, height = faces[0]['box']  # Get bounding box of the first detected face
+        x, y, width, height = faces[0]['box']  
         face_img = frame[y:y+height, x:x+width]
         
         # Resize for CNN model input
